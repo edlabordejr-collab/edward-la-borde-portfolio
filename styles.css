@@ -34,7 +34,7 @@ button{font:inherit}
 .nav-toggle{display:none;border:0;background:transparent;color:inherit;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
 
 .hero{position:relative;min-height:clamp(680px,88svh,820px);overflow:hidden;color:#fff;background:var(--navy-deep);isolation:isolate}
-.hero-background{position:absolute;inset:5rem 0 0;z-index:-3;background-image:url("assets/images/edward-hero-composite-v5.webp");background-size:cover;background-position:center center;transform:scale(1.018);animation:hero-drift 16s ease-out both}
+.hero-background{position:absolute;inset:5rem 0 0;z-index:-3;background-image:url("assets/images/edward-hero-composite-v6.webp");background-size:cover;background-position:center center;transform:scale(1.018);animation:hero-drift 16s ease-out both}
 .hero::before{content:"";position:absolute;inset:5rem 0 0;z-index:-2;background:linear-gradient(90deg,rgba(7,29,48,.88) 0%,rgba(8,34,56,.68) 30%,rgba(9,38,62,.25) 48%,rgba(8,29,47,.05) 63%,transparent 76%)}
 .hero::after{content:"";position:absolute;inset:auto 0 0;height:18%;z-index:-1;background:linear-gradient(transparent,rgba(7,25,41,.52))}
 .hero-inner{width:min(var(--max-width),90vw);min-height:clamp(680px,88svh,820px);margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:2rem;padding-top:5rem}
