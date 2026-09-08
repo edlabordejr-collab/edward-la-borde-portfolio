@@ -7,6 +7,26 @@ if (year) {
   year.textContent = new Date().getFullYear();
 }
 
+// Keep the new Creative AI portfolio page discoverable across the existing site
+// without changing the visual language or rebuilding each page header.
+if (siteNav && !siteNav.querySelector('a[href*="creative-ai"]')) {
+  const scriptElement = document.querySelector('script[src$="script.js"]');
+  const portfolioRoot = scriptElement?.src.replace(/script\.js(?:\?.*)?$/, '') || './';
+  const creativeAiLink = document.createElement('a');
+  creativeAiLink.href = new URL('creative-ai/', portfolioRoot).href;
+  creativeAiLink.textContent = 'Creative AI';
+
+  const experienceLink = Array.from(siteNav.querySelectorAll('a')).find((link) =>
+    link.textContent.trim().toLowerCase() === 'experience'
+  );
+
+  if (experienceLink) {
+    siteNav.insertBefore(creativeAiLink, experienceLink);
+  } else {
+    siteNav.appendChild(creativeAiLink);
+  }
+}
+
 function closeMenu() {
   if (!navToggle || !siteNav) return;
   navToggle.setAttribute('aria-expanded', 'false');
