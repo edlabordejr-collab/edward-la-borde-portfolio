@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Edward La Borde Jr. combines more than two decades of creative-production leadership with hands-on generative AI, workflow design, evaluation and responsible human review.">
+  <meta name="theme-color" content="#102A43">
+  <title>Creative Production + Applied AI | Edward La Borde Jr.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .ai-page{background:var(--warm-white)}
+    .ai-page .site-nav a[aria-current="page"]::after{right:0}
+    .ai-hero{min-height:88svh;padding:clamp(10rem,14vw,13rem) max(5vw,calc((100vw - var(--max-width))/2)) clamp(6rem,9vw,8rem);display:grid;grid-template-columns:1.03fr .97fr;gap:clamp(3rem,7vw,7rem);align-items:center;background:linear-gradient(135deg,#fff 0%,#fff 58%,#eef5f8 100%)}
+    .ai-hero-copy{max-width:760px}
+    .ai-hero h1{margin:0;color:var(--navy);font-size:clamp(3.8rem,7vw,7.2rem);line-height:.9;letter-spacing:-.065em;text-wrap:balance}
+    .ai-hero-lead{margin:2rem 0 0;max-width:700px;color:var(--ink);font-size:clamp(1.12rem,1.65vw,1.38rem);font-weight:600;line-height:1.62}
+    .ai-hero-note{margin:1.2rem 0 0;max-width:680px;color:var(--muted)}
+    .ai-hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.1rem}
+    .ai-button-outline{border-color:var(--navy);color:var(--navy);background:transparent}
+    .ai-button-outline:hover{background:var(--navy);color:#fff}
+    .ai-hero-panel{position:relative;padding:clamp(2rem,4vw,3.5rem);background:var(--navy);color:#fff;box-shadow:var(--shadow);overflow:hidden}
+    .ai-hero-panel::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;right:-80px;top:-80px;background:rgba(127,196,224,.13)}
+    .ai-panel-label{margin:0 0 1.4rem;color:#8ed0e8;font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+    .ai-hero-panel h2{position:relative;z-index:1;margin:0;color:#fff;font-size:clamp(2rem,3.6vw,3.45rem);line-height:1.02;letter-spacing:-.045em}
+    .ai-hero-panel p{position:relative;z-index:1;margin:1.4rem 0 0;color:rgba(255,255,255,.72)}
+    .ai-panel-list{position:relative;z-index:1;display:grid;gap:.75rem;margin:2rem 0 0;padding:0;list-style:none}
+    .ai-panel-list li{padding:.85rem 0;border-top:1px solid rgba(255,255,255,.16);font-size:.92rem;font-weight:700}
+    .ai-section{padding:clamp(6rem,10vw,9rem) max(5vw,calc((100vw - var(--max-width))/2))}
+    .ai-section-heading{max-width:880px;margin-bottom:clamp(3rem,6vw,5rem)}
+    .ai-section-heading h2{margin:0;color:var(--navy);font-size:clamp(2.7rem,5.4vw,5.35rem);line-height:.98;letter-spacing:-.055em;text-wrap:balance}
+    .ai-section-heading>p:last-child{max-width:700px;margin:1.6rem 0 0;color:var(--muted);font-size:1.04rem}
+    .ai-foundation{background:#fff}
+    .ai-foundation-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem)}
+    .ai-foundation-card{padding:clamp(2rem,3.8vw,3.5rem);border:1px solid var(--line);background:var(--warm-white)}
+    .ai-card-index{display:block;margin-bottom:1.2rem;color:var(--coral);font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    .ai-foundation-card h3{margin:0;color:var(--navy);font-size:clamp(1.8rem,3vw,2.8rem);line-height:1.08;letter-spacing:-.04em}
+    .ai-foundation-card p{margin:1.15rem 0 0;color:var(--muted)}
+    .ai-proof-list{margin:1.4rem 0 0;padding:0;list-style:none}
+    .ai-proof-list li{padding:.85rem 0;border-top:1px solid var(--line);color:var(--ink);font-size:.92rem}
+    .ai-practice{background:var(--sand)}
+    .ai-practice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem}
+    .ai-practice-card{padding:2rem;background:#fff;border-top:4px solid var(--ocean)}
+    .ai-practice-card h3{margin:0;color:var(--navy);font-size:1.45rem;line-height:1.15;letter-spacing:-.03em}
+    .ai-practice-card p{margin:.9rem 0 0;color:var(--muted);font-size:.93rem}
+    .ai-workflow{background:var(--navy);color:#fff}
+    .ai-workflow .eyebrow{color:#86c9e2}
+    .ai-workflow .ai-section-heading h2{color:#fff}
+    .ai-workflow .ai-section-heading>p:last-child{color:rgba(255,255,255,.68)}
+    .ai-workflow-steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));margin-top:1rem;border-top:1px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.2)}
+    .ai-step{min-height:230px;padding:1.7rem 1.2rem;border-right:1px solid rgba(255,255,255,.16)}
+    .ai-step:last-child{border-right:0}
+    .ai-step span{display:block;color:#86c9e2;font-size:.68rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    .ai-step h3{margin:1rem 0 0;color:#fff;font-size:1.12rem;line-height:1.18}
+    .ai-step p{margin:.8rem 0 0;color:rgba(255,255,255,.62);font-size:.82rem;line-height:1.55}
+    .ai-case{background:#fff}
+    .ai-case-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(3rem,7vw,7rem);align-items:start}
+    .ai-case-intro{position:sticky;top:7rem}
+    .ai-case-intro h2{margin:0;color:var(--navy);font-size:clamp(2.5rem,4.4vw,4.5rem);line-height:.98;letter-spacing:-.05em}
+    .ai-case-intro p{margin:1.4rem 0 0;color:var(--muted)}
+    .ai-case-block{padding:0 0 2rem;margin-bottom:2rem;border-bottom:1px solid var(--line)}
+    .ai-case-block h3{margin:0;color:var(--navy);font-size:1.45rem;letter-spacing:-.025em}
+    .ai-case-block p{margin:.8rem 0 0;color:var(--muted)}
+    .ai-case-block ul{margin:1rem 0 0;padding-left:1.2rem;color:var(--ink)}
+    .ai-case-block li{margin:.45rem 0}
+    .ai-toolkit{background:var(--warm-white)}
+    .ai-tool-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem}
+    .ai-tool-group{padding:2rem;border:1px solid var(--line);background:#fff}
+    .ai-tool-group h3{margin:0 0 1rem;color:var(--navy);font-size:1rem;text-transform:uppercase;letter-spacing:.08em}
+    .ai-tags{display:flex;flex-wrap:wrap;gap:.55rem}
+    .ai-tag{display:inline-flex;padding:.55rem .72rem;background:#eef4f7;color:var(--navy);font-size:.76rem;font-weight:700}
+    .ai-responsible{background:var(--sand)}
+    .ai-principles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.2rem}
+    .ai-principle{padding:1.8rem;background:#fff}
+    .ai-principle strong{display:block;color:var(--navy);font-size:1rem}
+    .ai-principle p{margin:.7rem 0 0;color:var(--muted);font-size:.9rem}
+    .ai-cta{padding:clamp(6rem,10vw,9rem) max(5vw,calc((100vw - var(--max-width))/2));background:var(--navy-deep);color:#fff;text-align:center}
+    .ai-cta h2{margin:0 auto;max-width:900px;font-size:clamp(2.8rem,5.5vw,5.7rem);line-height:.98;letter-spacing:-.055em}
+    .ai-cta p{max-width:680px;margin:1.4rem auto 0;color:rgba(255,255,255,.68)}
+    .ai-cta-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+    @media(max-width:980px){
+      .ai-hero,.ai-case-grid{grid-template-columns:1fr}
+      .ai-hero{min-height:auto}
+      .ai-case-intro{position:static}
+      .ai-practice-grid,.ai-tool-groups{grid-template-columns:1fr 1fr}
+      .ai-workflow-steps{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .ai-step:nth-child(3){border-right:0}
+      .ai-step:nth-child(-n+3){border-bottom:1px solid rgba(255,255,255,.16)}
+      .ai-principles{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:680px){
+      .ai-foundation-grid,.ai-practice-grid,.ai-tool-groups,.ai-principles{grid-template-columns:1fr}
+      .ai-workflow-steps{grid-template-columns:1fr}
+      .ai-step,.ai-step:nth-child(3){border-right:0;border-bottom:1px solid rgba(255,255,255,.16)}
+      .ai-step:last-child{border-bottom:0}
+      .ai-hero h1{font-size:clamp(3.25rem,17vw,5rem)}
+    }
+  </style>
+</head>
+<body class="ai-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="../" aria-label="Edward La Borde Jr. — home"><span>Edward La Borde Jr.</span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <nav class="site-nav" id="primary-nav" aria-label="Primary navigation">
+      <a href="../#work">Work</a>
+      <a href="../about/">About</a>
+      <a href="./" aria-current="page">Creative AI</a>
+      <a href="../#experience">Experience</a>
+      <a href="../resume/">Résumé</a>
+      <a href="../#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="ai-hero">
+      <div class="ai-hero-copy reveal">
+        <p class="eyebrow">Creative Production + Applied AI</p>
+        <h1>Craft first.<br>AI where it earns its place.</h1>
+        <p class="ai-hero-lead">I bring more than two decades of producing, directing, editing and creative operations experience to the practical question that matters now: how can generative AI improve a real production pipeline without losing quality, intent, trust or human judgment?</p>
+        <p class="ai-hero-note">Adobe Firefly was the first generative AI platform I used. Since then, my practice has expanded across image, video, research, planning, prompt development, workflow design and evaluation—always grounded in the realities of getting creative work made and approved.</p>
+        <div class="ai-hero-actions">
+          <a class="button button-coral" href="#workflow">See the workflow</a>
+          <a class="button ai-button-outline" href="../#work">View shipped work</a>
+        </div>
+      </div>
+      <aside class="ai-hero-panel reveal" aria-label="Applied AI focus areas">
+        <p class="ai-panel-label">What I bring</p>
+        <h2>Production judgment + hands-on experimentation.</h2>
+        <p>The value is not simply generating an asset. It is understanding where AI belongs in the process, what good looks like, how to evaluate failure, and when a human needs to stay in control.</p>
+        <ul class="ai-panel-list">
+          <li>Creative-production leadership</li>
+          <li>Generative AI prototyping and evaluation</li>
+          <li>Reference-controlled visual development</li>
+          <li>Repeatable workflow and review design</li>
+          <li>Responsible human-in-the-loop production</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="ai-section ai-foundation" aria-labelledby="foundation-title">
+      <div class="ai-section-heading reveal">
+        <p class="eyebrow">The Foundation</p>
+        <h2 id="foundation-title">AI is most useful when it understands the production it is entering.</h2>
+        <p>My perspective comes from having owned creative work from the first conversation through final delivery—story, budget, crew, field production, editorial, stakeholder reviews, approvals and distribution.</p>
+      </div>
+      <div class="ai-foundation-grid">
+        <article class="ai-foundation-card reveal">
+          <span class="ai-card-index">01 / Production Craft</span>
+          <h3>Shipped work, not theoretical creative.</h3>
+          <p>My career spans independent features, documentary, public media, branded content, global nonprofit storytelling and high-volume broadcast production.</p>
+          <ul class="ai-proof-list">
+            <li>20+ years across producing, directing, writing and editing</li>
+            <li>Three feature documentaries and 200+ live episodes produced at WTJX PBS</li>
+            <li>Global storytelling across Kenya, Nepal, Romania and the Dominican Republic</li>
+            <li>Partner-impact work connected to major corporate and nonprofit organizations</li>
+          </ul>
+        </article>
+        <article class="ai-foundation-card reveal">
+          <span class="ai-card-index">02 / Systems Thinking</span>
+          <h3>Make the creative process visible and repeatable.</h3>
+          <p>Strong creative work still depends on structure. I build practical systems that clarify inputs, decisions, review gates, ownership and handoffs while leaving room for judgment and invention.</p>
+          <ul class="ai-proof-list">
+            <li>Repeatable beat-sheet and production-planning practices</li>
+            <li>Sidecar workflows for simultaneous cinematic and vertical capture</li>
+            <li>Cross-functional review with marketing, executives, subject-matter experts and partners</li>
+            <li>Editorial and quality-control decisions from brief through delivery</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="ai-section ai-practice" aria-labelledby="practice-title">
+      <div class="ai-section-heading reveal">
+        <p class="eyebrow">Applied AI Practice</p>
+        <h2 id="practice-title">Use the tool to solve a production problem—not to create a new one.</h2>
+        <p>My hands-on work focuses on the gap between an impressive demo and something a creative team can actually use, review and repeat.</p>
+      </div>
+      <div class="ai-practice-grid">
+        <article class="ai-practice-card reveal"><h3>Visual Development</h3><p>Generate and refine references, look exploration, environments, shot concepts and previsualization while protecting the creative brief.</p></article>
+        <article class="ai-practice-card reveal"><h3>Reference Control</h3><p>Use character, environment, style and shot references to reduce drift and keep output aligned across a sequence rather than treating every generation as an isolated image.</p></article>
+        <article class="ai-practice-card reveal"><h3>Prompt & Model Evaluation</h3><p>Compare outputs, isolate failure modes, revise prompts and choose tools based on the production need rather than loyalty to a single model.</p></article>
+        <article class="ai-practice-card reveal"><h3>Quality Control</h3><p>Evaluate composition, continuity, realism, brand or story alignment, cultural accuracy and usability—not simply whether an output looks impressive at first glance.</p></article>
+        <article class="ai-practice-card reveal"><h3>Human Review</h3><p>Keep clear review gates for creative judgment, factual verification, rights, participant dignity and final approval.</p></article>
+        <article class="ai-practice-card reveal"><h3>Workflow Design</h3><p>Turn successful experiments into named steps, reusable references, documented criteria and handoffs that a broader team can repeat.</p></article>
+      </div>
+    </section>
+
+    <section class="ai-section ai-workflow" id="workflow" aria-labelledby="workflow-title">
+      <div class="ai-section-heading reveal">
+        <p class="eyebrow">A Practical Workflow</p>
+        <h2 id="workflow-title">From creative intent to repeatable output.</h2>
+        <p>This is the operating pattern I use when introducing generative tools into a creative-production process.</p>
+      </div>
+      <div class="ai-workflow-steps reveal">
+        <article class="ai-step"><span>01</span><h3>Define the job</h3><p>Audience, objective, deliverable, quality bar, constraints and what success actually means.</p></article>
+        <article class="ai-step"><span>02</span><h3>Control inputs</h3><p>Approved references, source assets, visual rules, terminology, rights and non-negotiables.</p></article>
+        <article class="ai-step"><span>03</span><h3>Prototype</h3><p>Generate a small, representative sample before scaling the workflow.</p></article>
+        <article class="ai-step"><span>04</span><h3>Evaluate</h3><p>Compare output to explicit creative, technical and production criteria; identify failure modes.</p></article>
+        <article class="ai-step"><span>05</span><h3>Iterate & govern</h3><p>Adjust prompts, references, models and review gates; document what changes and why.</p></article>
+        <article class="ai-step"><span>06</span><h3>Scale what works</h3><p>Turn the proven pattern into a reusable workflow, handoff or team practice.</p></article>
+      </div>
+    </section>
+
+    <section class="ai-section ai-case" aria-labelledby="case-title">
+      <div class="ai-case-grid">
+        <div class="ai-case-intro reveal">
+          <p class="eyebrow">Workflow Example</p>
+          <h2 id="case-title">Narrative previsualization and shot development.</h2>
+          <p>An independent narrative-production workflow became a practical test bed for the same issues enterprise teams face when they try to move generative AI from isolated experiments into consistent creative output.</p>
+        </div>
+        <div class="ai-case-detail">
+          <article class="ai-case-block reveal">
+            <h3>The production challenge</h3>
+            <p>Creating cinematic stills and motion concepts across a sequence requires more than a strong one-off image. Characters, environments, lens behavior, composition, cultural details and narrative continuity need to remain coherent from shot to shot.</p>
+          </article>
+          <article class="ai-case-block reveal">
+            <h3>The working approach</h3>
+            <ul>
+              <li>Define character and environment reference assets before generating a batch.</li>
+              <li>Translate shot intent into camera, lens, composition and action requirements.</li>
+              <li>Use image generation for controlled keyframes and previsualization.</li>
+              <li>Compare motion tools according to the needs of a specific shot.</li>
+              <li>QC outputs in batches for continuity, realism, composition and reference adherence.</li>
+              <li>Regenerate selectively rather than accepting drift or scaling a broken workflow.</li>
+            </ul>
+          </article>
+          <article class="ai-case-block reveal">
+            <h3>What the failures taught me</h3>
+            <p>AI output can degrade even when the prompt seems correct. More instructions are not always better. Reference management, clear evaluation criteria, batch review and model selection often matter as much as the prompt itself. A usable production system therefore needs governance around the generation step—not just access to the model.</p>
+          </article>
+          <article class="ai-case-block reveal">
+            <h3>The principle that transfers</h3>
+            <p>Start with a real creative need. Prototype narrowly. Make quality criteria visible. Keep humans responsible for judgment. Document the pattern only after it has survived production use.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-section ai-toolkit" aria-labelledby="toolkit-title">
+      <div class="ai-section-heading reveal">
+        <p class="eyebrow">Working Toolkit</p>
+        <h2 id="toolkit-title">Broad enough to choose the right layer.</h2>
+        <p>I use the tools below at different depths depending on the production need. My strongest value is connecting them to creative requirements, production judgment and a repeatable process.</p>
+      </div>
+      <div class="ai-tool-groups">
+        <article class="ai-tool-group reveal"><h3>Adobe + Production</h3><div class="ai-tags"><span class="ai-tag">Adobe Firefly</span><span class="ai-tag">Premiere Pro</span><span class="ai-tag">Photoshop</span><span class="ai-tag">After Effects</span><span class="ai-tag">Creative Cloud</span><span class="ai-tag">Frame.io</span></div></article>
+        <article class="ai-tool-group reveal"><h3>Generative + Research</h3><div class="ai-tags"><span class="ai-tag">ChatGPT</span><span class="ai-tag">Runway</span><span class="ai-tag">Gemini</span><span class="ai-tag">NotebookLM</span><span class="ai-tag">Microsoft Copilot</span><span class="ai-tag">Canva AI</span></div></article>
+        <article class="ai-tool-group reveal"><h3>Production Systems</h3><div class="ai-tags"><span class="ai-tag">Smartsheet</span><span class="ai-tag">SharePoint</span><span class="ai-tag">Microsoft Teams</span><span class="ai-tag">Microsoft 365</span><span class="ai-tag">Google Workspace</span></div></article>
+      </div>
+    </section>
+
+    <section class="ai-section ai-responsible" aria-labelledby="responsible-title">
+      <div class="ai-section-heading reveal">
+        <p class="eyebrow">Responsible Production</p>
+        <h2 id="responsible-title">Efficiency matters. Trust matters more.</h2>
+        <p>Generative AI belongs inside the same professional standards that govern the rest of a production.</p>
+      </div>
+      <div class="ai-principles">
+        <article class="ai-principle reveal"><strong>Human accountability</strong><p>A person remains responsible for the creative, factual and ethical decision.</p></article>
+        <article class="ai-principle reveal"><strong>Approved inputs</strong><p>Reference and source assets should be appropriate for the intended use and review context.</p></article>
+        <article class="ai-principle reveal"><strong>Visible quality criteria</strong><p>Teams need shared standards for acceptance, not vague reactions to generated output.</p></article>
+        <article class="ai-principle reveal"><strong>Right tool / no tool</strong><p>AI is not automatically the best answer. A sound workflow includes knowing when not to use it.</p></article>
+      </div>
+    </section>
+
+    <section class="ai-cta">
+      <p class="eyebrow">Creative Leadership for the AI Era</p>
+      <h2>Build the workflow around the work—not the hype.</h2>
+      <p>I am interested in helping creative organizations turn emerging tools into practical production capability while protecting the craft, people and standards that make the work worth producing.</p>
+      <div class="ai-cta-actions">
+        <a class="button button-coral" href="mailto:edlaborde@me.com">Start a conversation</a>
+        <a class="button button-ghost" href="../resume/">View résumé</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>
